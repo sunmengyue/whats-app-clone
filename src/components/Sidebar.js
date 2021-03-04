@@ -4,6 +4,9 @@ import { Avatar } from '@material-ui/core';
 import DonutLargeIcon from '@material-ui/icons/DonutLarge';
 import ChatIcon from '@material-ui/icons/Chat';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+import { IconButton } from '@material-ui/core';
+import SearchIcon from '@material-ui/icons/Search';
+import SidebarChats from './SidebarChats';
 
 const Sidebar = () => {
   return (
@@ -11,13 +14,26 @@ const Sidebar = () => {
       <div className='sidebar__header'>
         <Avatar />
         <div className='sidebar__headerRight'>
-          <DonutLargeIcon />
-          <ChatIcon />
-          <MoreVertIcon />
+          <IconButton>
+            <DonutLargeIcon />
+          </IconButton>
+          <IconButton>
+            <ChatIcon />
+          </IconButton>
+          <IconButton>
+            <MoreVertIcon />
+          </IconButton>
         </div>
       </div>
-      <div className='sidebar__search'> </div>
-      <div className='sidebar__chats'></div>
+      <div className='sidebar__search'>
+        <div className='sidebar__searchContainer'>
+          <SearchIcon />
+          <input placeholder='Search or start new chat' />
+        </div>
+      </div>
+      <div className='sidebar__chats'>
+        <SidebarChats />
+      </div>
     </div>
   );
 };
