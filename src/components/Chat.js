@@ -5,6 +5,8 @@ import { Avatar } from '@material-ui/core';
 import SearchOutlinedIcon from '@material-ui/icons/SearchOutlined';
 import AttachFileIcon from '@material-ui/icons/AttachFile';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+import InsertEmoticonOutlinedIcon from '@material-ui/icons/InsertEmoticonOutlined';
+import MicNoneOutlinedIcon from '@material-ui/icons/MicNoneOutlined';
 
 const Chat = () => {
   const [seed, setSeed] = useState('');
@@ -12,6 +14,8 @@ const Chat = () => {
   useEffect(() => {
     setSeed(Math.floor(Math.random() * 5000));
   }, []);
+
+  const sendMessage = () => {};
 
   return (
     <div className='chat'>
@@ -40,7 +44,16 @@ const Chat = () => {
           <span className='chat__timestamp'>3:52pm</span>
         </p>
       </div>
-      <div className='chat__footer'></div>
+      <div className='chat__footer'>
+        <InsertEmoticonOutlinedIcon />
+        <form>
+          <input type='text' placeholder='Type a message' />
+          <button onClick={sendMessage} type='submit'>
+            Send a message
+          </button>
+        </form>
+        <MicNoneOutlinedIcon />
+      </div>
     </div>
   );
 };
