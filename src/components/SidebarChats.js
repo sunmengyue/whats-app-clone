@@ -5,6 +5,9 @@ import SidebarChat from './SidebarChat';
 const SidebarChats = () => {
   return (
     <div className='sidebar__chats'>
+      <SidebarChat addNewChat />
+      <SidebarChat />
+      <SidebarChat />
       <SidebarChat />
     </div>
   );
